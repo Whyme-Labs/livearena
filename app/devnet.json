@@ -1,0 +1,11 @@
+{
+  "chain": "devnet",
+  "request": "5wS5F4kksDc2zZRv2qcbAXYSPxcwALZwpcRa7E8s6a9NuDtB5Twmv4tWE49jwkRsakH9cbXerpLpeNgR6kn5WWN8",
+  "fulfillment": "36riWEDdCnL6MJcopoE915q2YAASStXoS3ZKKWnH4f39A6sg2k5Gc9YxDuS7uJzyKZM8HSNUP3TMpZWj2ZSVHFjn",
+  "player": "75xf1NwwkXY8dKPhsfFhRLSNHTmcgGgucTUVDiB1fvW9",
+  "payer": "8XhpNLFUbJgcjkVzpjTyYxCVgxag2ckWreDB2HabpD1P",
+  "requestSlot": 526066001,
+  "fulfillmentSlot": 526066004,
+  "random": "bfa6dca2973947ec2454fe903c73fc6c979172c62fa92799ff03f0cda52ebd3a",
+  "seed": "a44c038305b8023ff6afdba856773d1edcadbc82c905c2a133f58bf7e12ea3de"
+}

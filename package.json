@@ -1,0 +1,27 @@
+{
+  "name": "livearena",
+  "version": "1.0.0",
+  "description": "Timed arithmetic duels with reproducible MagicBlock VRF rounds",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node --test",
+    "start": "node scripts/serve.mjs",
+    "proof:new": "node scripts/new-proof.mjs",
+    "proof:verify": "node scripts/verify-proof.mjs",
+    "round:verify": "node scripts/verify-round.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Whyme-Labs/livearena.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Whyme-Labs/livearena/issues"
+  },
+  "homepage": "https://github.com/Whyme-Labs/livearena#readme",
+  "dependencies": {
+    "@solana/web3.js": "1.98.4",
+    "bs58": "6.0.0"
+  }
+}

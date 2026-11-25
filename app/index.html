@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171b18">
+  <meta name="description" content="A timed arithmetic duel against an exact solver. Play the same challenge, then audit the round's Solana randomness receipt.">
+  <title>LiveArena — Arithmetic duels</title>
+  <link rel="stylesheet" href="./arena.css">
+  <script type="module" src="./ui.mjs"></script>
+</head>
+<body>
+  <header class="banner">
+    <div class="brand"><span aria-hidden="true">∷</span> LiveArena</div>
+    <span class="edition">ARITHMETIC DUELS</span>
+  </header>
+  <main>
+    <section class="intro">
+      <h1>Outsolve the <em>solver.</em></h1>
+      <p>Build an expression from the tiles and reach the target. Fewer moves win. Speed breaks ties.</p>
+    </section>
+    <div class="arena-layout">
+      <section class="board" aria-labelledby="round-title">
+        <div class="board-header">
+          <div>
+            <h2 id="round-title">Challenge</h2>
+            <p id="round-source">Choose a round to reveal the target.</p>
+          </div>
+          <div class="timer" aria-label="Time left"><span id="clock">45.0</span><small>S LEFT</small></div>
+        </div>
+        <div class="lane">
+          <div class="target"><span>TARGET</span><output id="target">–</output></div>
+          <div class="tile-rack">
+            <span>YOUR TILES</span>
+            <div id="tiles" class="tiles" aria-label="Number tiles"></div>
+          </div>
+        </div>
+        <form id="attempt-form" class="attempt">
+          <label for="expression">Your expression</label>
+          <div class="expression-row">
+            <input id="expression" name="expression" type="text" maxlength="64" placeholder="Type or tap the tiles" autocomplete="off" autocapitalize="off" spellcheck="false" disabled>
+            <button class="secondary" id="submit" type="submit" disabled>Lock in</button>
+          </div>
+          <div id="keys" class="keys" aria-label="Expression keypad"></div>
+          <p id="feedback" class="feedback" role="status"></p>
+        </form>
+        <div class="board-actions">
+          <button id="new-round" class="primary" type="button">Start practice</button>
+          <button id="proof-round" class="secondary" type="button" hidden>Replay devnet round</button>
+        </div>
+      </section>
+      <aside class="side">
+        <section class="match" aria-labelledby="match-title">
+          <h2 id="match-title">Match standings</h2>
+          <ol class="standings">
+            <li><span class="badge">H</span><div><strong>You</strong><span id="human-detail">Waiting for a round</span></div><output id="human-result">–</output></li>
+            <li><span class="badge solver">S</span><div><strong>Exact solver</strong><span id="solver-detail">Locks in at 20 seconds</span></div><output id="solver-result">–</output></li>
+          </ol>
+          <p id="result" class="result" role="status">Best expression wins</p>
+        </section>
+        <section class="receipt" aria-labelledby="receipt-title">
+          <h2 id="receipt-title">Round receipt</h2>
+          <p id="proof-description">Devnet rounds include a MagicBlock VRF receipt. Practice rounds use local browser entropy.</p>
+          <div id="proof-links" class="proof-links" hidden>
+            <a id="request-link" target="_blank" rel="noopener">Request ↗</a>
+            <a id="fulfillment-link" target="_blank" rel="noopener">Fulfillment ↗</a>
+          </div>
+          <button id="receipt" class="text-button" type="button" hidden>Download receipt ↓</button>
+        </section>
+      </aside>
+    </div>
+    <footer>Every tile can be used once. Division must give a whole number at each step.</footer>
+  </main>
+</body>
+</html>
